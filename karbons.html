@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Карбоновые кислоты</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background-color: #fefef9;
+      color: #2f4630;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .hidden { display: none; }
+    .visible { display: block; }
+    .button-active {
+      background-color: #cfe3d4 !important;
+      border: 2px solid #8b9e8c !important;
+      font-weight: bold !important;
+    }
+    /* Шапка */
+    .header {
+      padding: 30px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #ddd;
+    }
+    .header-left div:first-child {
+      font-size: 32px;
+      font-weight: bold;
+    }
+    .header-left div:last-child {
+      font-size: 18px;
+      color: #555;
+    }
+    .header-links a {
+      padding: 10px 18px;
+      border-radius: 25px;
+      background-color: white;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      color: #2f4630;
+      border: 1px solid #ccc;
+      margin-left: 10px;
+      white-space: nowrap;
+    }
+    .header-links a.active {
+      border: 2px solid #8b9e8c;
+      background-color: #cfe3d4;
+      font-weight: bold;
+      color: #2f4630;
+    }
+    /* Основной контент */
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 40px;
+      gap: 20px;
+      flex-grow: 1;
+      flex-wrap: nowrap; /* запрет переноса */
+    }
+    /* Левая часть (ВСЕГДА ВИДИМА) */
+    .left-part {
+      flex: 0 0 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      min-width: 0;
+    }
+    .left-part h1 {
+      font-size: 42px;
+      font-weight: bold;
+      margin: 0 0 20px 0;
+      cursor: default;
+    }
+    .intro-box {
+      border: 2px solid #8b9e8c;
+      border-radius: 12px;
+      padding: 20px;
+      font-size: 20px;
+      background-color: #ffffff;
+    }
+    ul.types-list {
+      font-size: 20px;
+      padding-left: 20px;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .types-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 30px 0 10px 0;
+    }
+    .buttons-column {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .buttons-column button, #videoBtn {
+      padding: 12px 20px;
+      font-size: 18px;
+      background-color: white;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+    .buttons-column button.button-active,
+    #videoBtn.button-active {
+      background-color: #cfe3d4;
+      border-color: #8b9e8c;
+      font-weight: bold;
+    }
+    /* Правая часть (меняется) */
+    .right-part {
+      flex: 0 0 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 0;
+    }
+    .right-part > div {
+      width: 100%;
+      text-align: center;
+    }
+    .right-part img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    .right-part div.description {
+      font-size: 18px;
+      color: #2f4630;
+    }
+    /* Видео и кнопка под ним */
+    #videoBlock video {
+      width: 100%;
+      border-radius: 12px;
+      outline: none;
+    }
+    #videoBlock .test-button {
+      margin-top: 10px;
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #8b9e8c;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 12px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #videoBlock .test-button:hover {
+      background-color: #6f7f72;
+    }
+    /* Адаптив для узких экранов */
+    @media (max-width: 800px) {
+      .content {
+        flex-direction: column;
+        padding: 20px;
+      }
+      .left-part, .right-part {
+        flex: 1 1 100%;
+        min-width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Шапка -->
+
+<!-- Шапка -->
+<div style="padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; border-bottom: 1px solid #ddd;">
+  <div style="display: flex; align-items: center; gap: 15px;">
+    <img src="aitu-logo-3.png" alt="Логотип университета" style="height:90px; width: auto; object-fit: contain;">
+  </div>
+    <div class="header-links">
+      <a href="polymer.html">Полимеры</a>
+      <a href="amini.html">Амины</a>
+      <a href="karbons.html" class="active">Карбоновые кислоты и спирты</a>
+    </div>
+  </div>
+
+  <!-- Основной контент -->
+  <div class="content">
+
+    <!-- Левая часть (всегда видна) -->
+    <div class="left-part">
+      <h1>КАРБОНОВЫЕ КИСЛОТЫ</h1>
+
+      <div class="intro-box" id="introBox">
+        Карбоновые кислоты — это органические соединения, содержащие карбоксильную группу -COOH.
+      </div>
+
+      <ul class="types-list" id="introList">
+        <li>Общая формула: R-COOH</li>
+        <li>Примеры: уксусная кислота, муравьиная кислота, бензойная кислота</li>
+        <li>Кислотные свойства обусловлены наличием -OH и =O у атома углерода</li>
+      </ul>
+
+      <div class="types-title">Типы кислот:</div>
+
+      <div class="buttons-column">
+        <button id="btnSaturated" onclick="showBlock('saturated', this)">Насыщенные</button>
+        <button id="btnUnsaturated" onclick="showBlock('unsaturated', this)">Ненасыщенные</button>
+        <button id="btnAromatic" onclick="showBlock('aromatic', this)">Ароматические</button>
+        <button id="videoBtn" onclick="showVideo(this)">Видеоразбор карбоновых кислот</button>
+      </div>
+    </div>
+
+    <!-- Правая часть (только она меняется) -->
+    <div class="right-part">
+
+      <!-- Описание по умолчанию -->
+<div id="defaultBlock" class="visible">
+  <img src="img1.jpg" alt="Карбоновые кислоты" />
+  <div class="description">
+    
+  </div>
+</div>
+
+<!-- Насыщенные -->
+<!-- Насыщенные -->
+<div id="saturated" class="hidden">
+  <img src="IMAGE 2025-05-23 02:20:35.jpg" alt="Насыщенные карбоновые кислоты" />
+  <div class="description">
+    Насыщенные карбоновые кислоты содержат только одинарные связи в углеродном скелете.  
+    Среди них особенно важны пальмитиновая и стеариновая кислоты.  
+    Пальмитиновая кислота — это насыщенная жирная кислота с 16 атомами углерода (C16H32O2), широко встречается в животных и растительных жирах. Она играет ключевую роль в метаболизме и используется организмом для производства энергии и строительства клеточных мембран.  
+    Стеариновая кислота — насыщенная жирная кислота с 18 атомами углерода (C18H36O2), часто встречается в жирах животных и некоторых растительных маслах. Она используется в косметике и мыловарении, а также участвует в синтезе липидов в организме.  
+    Обе кислоты характеризуются высокой стабильностью и устойчивостью к окислению благодаря отсутствию двойных связей.
+  </div>
+</div>
+
+<!-- Ненасыщенные -->
+<div id="unsaturated" class="hidden">
+  <img src="IMAGE 2025-05-23 02:20:09.jpg" alt="Ненасыщенные карбоновые кислоты" />
+  <div class="description">
+    Ненасыщенные кислоты имеют одну или несколько двойных связей.  
+    Олеиновая кислота — мононенасыщенная, содержится в оливковом масле.  
+    Линолевая кислота — полиненасыщенная, незаменимая, встречается в растительных маслах.  
+    Линоленовая кислота — полиненасыщенная, важна для здоровья клеток и иммунитета.
+  </div>
+</div>
+
+
+<div id="aromatic" class="hidden">
+  <img src="IMAGE 2025-05-23 02:18:09.jpg" alt="Ароматические карбоновые кислоты" />
+  <div class="description">
+    Ароматические кислоты содержат бензольное кольцо.  
+    Фталевая кислота используется в производстве пластмасс.  
+    Бензойная кислота — консервант и антисептик.  
+    Салициловая кислота применяется в медицине для лечения кожи.
+  </div>
+</div>
+
+
+      <!-- Видео блок -->
+      <div id="videoBlock" class="hidden">
+        <video controls>
+          <source src="-6652206180032621360.mov" type="video/mp4" />
+          Ваш браузер не поддерживает воспроизведение видео.
+        </video>
+        <a href="https://forms.gle/6JhqzqRrUSrxQboo6" class="test-button" target="_blank" rel="noopener">Пройдите тест</a>
+      </div>
+
+    </div>
+
+  </div>
+
+<script>
+  function resetAll() {
+    // Убираем выделение со всех кнопок
+    const buttons = document.querySelectorAll('.buttons-column button');
+    buttons.forEach(btn => btn.classList.remove('button-active'));
+
+    // Скрываем все правые блоки
+    ['defaultBlock', 'saturated', 'unsaturated', 'aromatic', 'videoBlock'].forEach(id => {
+      document.getElementById(id).classList.add('hidden');
+      document.getElementById(id).classList.remove('visible');
+    });
+
+    // Показываем дефолтный блок справа
+    document.getElementById('defaultBlock').classList.remove('hidden');
+    document.getElementById('defaultBlock').classList.add('visible');
+
+    // Левая часть НИКОГДА НЕ СКРЫВАЕМ
+    // Нет необходимости трогать introBox и introList - они всегда видимы
+  }
+
+  function showBlock(id, btn) {
+    resetAll();
+    btn.classList.add('button-active');
+
+    // Показываем выбранный блок справа
+    document.getElementById('defaultBlock').classList.add('hidden');
+    document.getElementById('defaultBlock').classList.remove('visible');
+
+    document.getElementById(id).classList.remove('hidden');
+    document.getElementById(id).classList.add('visible');
+  }
+
+  function showVideo(btn) {
+    resetAll();
+    btn.classList.add('button-active');
+
+    document.getElementById('defaultBlock').classList.add('hidden');
+    document.getElementById('defaultBlock').classList.remove('visible');
+
+    ['saturated','unsaturated','aromatic'].forEach(id => {
+      document.getElementById(id).classList.add('hidden');
+      document.getElementById(id).classList.remove('visible');
+    });
+
+    const videoBlock = document.getElementById('videoBlock');
+    videoBlock.classList.remove('hidden');
+    videoBlock.classList.add('visible');
+  }
+
+  // Инициализация
+  resetAll();
+</script>
+
+</body>
+</html>
